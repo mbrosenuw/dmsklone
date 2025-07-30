@@ -24,7 +24,7 @@ uconsts = consts
 Qx = 0.518612135474886
 Qz = 0.165663518946693
 V3 = 323.725000000 * 2
-V6 = 3.277 * 2
+V6 = -3.277 * 2
 V3p = 8.935
 V3m = -7.361
 
@@ -60,6 +60,6 @@ plt.ylabel('Intensity',fontsize=20)
 plt.tight_layout()
 plt.show()
 plt.savefig('fullspectrum.png')
-
+plt.close()
 
 

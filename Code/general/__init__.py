@@ -1,1 +1,1 @@
-from timing import timing
+from .timing import timing
