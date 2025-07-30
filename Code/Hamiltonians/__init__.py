@@ -1,1 +1,1 @@
-from .ham import ham
+from .ham import ham as ham

@@ -1,4 +1,4 @@
-import Hamiltonians.ham as ham
+import Code.Hamiltonians as ham
 from Code.Spectrum_Generation.boltzmann import getdenom, boltzmann
 import numpy as np
 import pandas as pd
