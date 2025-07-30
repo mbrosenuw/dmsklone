@@ -47,13 +47,13 @@ from tqdm import tqdm
 def plotter(df, lims, w=0.05, shift = 0,  title="Interactive Spectrum", other = None, show = True):
 
     # # Create Plotly figure
-    fig, ax = plt.subplots(figsize=(9, 5.5))
-    sp,x = plotspectrum(df, 'Torsions, With Coriolis Coupling', ax, lims, w, shift, 'black', linewidth = 1)
+    # fig, ax = plt.subplots(figsize=(9, 5.5))
+    sp,x = plotspectrum(df, 'Torsions, With Coriolis Coupling',None, lims, w, shift, 'black', linewidth = 1)
     if show:
         colors = ['red', 'blue']
         if other is not None:
             for i, (key, df) in enumerate(other.items()):
-                plotspectrum(df, key, ax, lims, w, shift,color = colors[i],linewidth = 1)
+                plotspectrum(df, key, None, lims, w, shift,color = colors[i],linewidth = 1)
                 # plotspectrum(df, key, ax, lims, w, shift, linewidth=1)
 
         plt.xlabel('Frequency [cm$^{-1}$]', fontsize=14)
@@ -172,9 +172,10 @@ def plotspectrum(df, name, ax, lims, w, shift, color=None, linewidth=0.5):
     df['intensity'] = df['intensity'] / np.max(spectrum)
 
     # Plot
-    if color is not None:
-        ax.plot(x_vals, spectrum / np.max(spectrum), label=name, linewidth=linewidth, color=color)
-    else:
-        ax.plot(x_vals, spectrum / np.max(spectrum), label=name, linewidth=linewidth)
+    if ax is not None:
+        if color is not None:
+            ax.plot(x_vals, spectrum / np.max(spectrum), label=name, linewidth=linewidth, color=color)
+        else:
+            ax.plot(x_vals, spectrum / np.max(spectrum), label=name, linewidth=linewidth)
 
     return spectrum, x_vals
