@@ -23,7 +23,7 @@ class ham():
 
         with timing("Torsional Hamiltonian Calculation") as t:
             torsions = torham(d1, d2, F, Fprime, V3, V6, V3p, V3m, chop)
-            torsions2 = torham(d1, d2, F, Fprime, V3*0.99, V6, V3p, V3m, chop)
+            torsions2 = torham(d1, d2, F, Fprime, V3, V6, V3p, V3m, chop)
             self.torsions = torsions
 
         with timing("Rotational Hamiltonian Calculation") as t:
@@ -86,7 +86,6 @@ def evalham(torsions, rsubham, Qx, Qz):
     for (l, j, gamma), block in blocks.items():
         idxs = block['start']
         idxe = block['end'] + 1
-        print(idxe-idxs)
         energies[idxs:idxe], eigenvectors = np.linalg.eigh(Htot[idxs:idxe, idxs:idxe].toarray())
         ev = sp.csr_matrix(eigenvectors)
         wfns[idxs:idxe, idxs:idxe] = ev

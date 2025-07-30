@@ -7,7 +7,7 @@ V3 = 323.725000000*2
 chop = 135
 mu = [0, 1, 0]
 jmin = 0
-jmax = 50
+jmax = 20
 T = 300
 lims = [-500, 500]
 shift = 0
@@ -33,14 +33,14 @@ nistconsts = np.array([0.19073, 0.25421, 0.59406])
 chop = 135+54
 DMS = Model(d1, d2, F, Fprime, 0*Qx, 0*Qz, nistconsts, nistconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
                 stats=[1, 1, 1, 1])
-DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_70_no_coriolis')
+DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_20_no_coriolis')
 spnocor,xnocor = DMS.plot(show = False)
 
 DMS = Model(d1, d2, F, Fprime, Qx, Qz, consts, uconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
                 stats=[1, 1, 1, 1])
 # DMS = Model(d1, d2, F, Fprime, 0*Qx, 0*Qz, nistconsts, nistconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
 #                 stats=[1, 1, 1, 1])
-DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_70_full')
+DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_20_full')
 spfull,xfull = DMS.plot(show = False)
 
 
@@ -58,7 +58,7 @@ plt.xlabel('Frequency [cm$^{-1}$]',fontsize=20)
 plt.ylabel('Intensity',fontsize=20)
 # plt.title('R Branch of $J\leq2$ Spectrum',fontsize=24)
 plt.tight_layout()
-plt.savefig('fullspectrum.png')
+plt.savefig('fullspectrum_J_20.png')
 plt.close()
 
 
