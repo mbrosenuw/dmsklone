@@ -58,7 +58,6 @@ plt.xlabel('Frequency [cm$^{-1}$]',fontsize=20)
 plt.ylabel('Intensity',fontsize=20)
 # plt.title('R Branch of $J\leq2$ Spectrum',fontsize=24)
 plt.tight_layout()
-plt.show()
 plt.savefig('fullspectrum.png')
 plt.close()
 
