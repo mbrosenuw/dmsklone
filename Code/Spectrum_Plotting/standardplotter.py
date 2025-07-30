@@ -63,6 +63,7 @@ def plotter(df, lims, w=0.05, shift = 0,  title="Interactive Spectrum", other = 
         plt.legend(loc='best')
         plt.tight_layout()
         plt.show()
+    else: plt.close()
 
     # lims = [
     #     (1000, 1022),

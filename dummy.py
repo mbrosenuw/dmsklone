@@ -34,14 +34,14 @@ chop = 135+54
 DMS = Model(d1, d2, F, Fprime, 0*Qx, 0*Qz, nistconsts, nistconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
                 stats=[1, 1, 1, 1])
 DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_70_no_coriolis')
-spnocor,xnocor = DMS.plot()
+spnocor,xnocor = DMS.plot(show = False)
 
 DMS = Model(d1, d2, F, Fprime, Qx, Qz, consts, uconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
                 stats=[1, 1, 1, 1])
 # DMS = Model(d1, d2, F, Fprime, 0*Qx, 0*Qz, nistconsts, nistconsts, V3, V6, V3p, V3m, chop, mu, jmin, jmax, T, lims, width, shift,
 #                 stats=[1, 1, 1, 1])
 DMS.newcalcspectrum(save = True, name = '6_quanta_J_0_70_full')
-spfull,xfull = DMS.plot()
+spfull,xfull = DMS.plot(show = False)
 
 
 plt.figure(figsize = (8,6))
